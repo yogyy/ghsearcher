@@ -73,7 +73,7 @@
     @apply border-border;
   }
   body {
-    background-color: #09090b;
+    background-color: #E5E5E5;
     color: var(--foreground);
   }
   a{

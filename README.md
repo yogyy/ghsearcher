@@ -1,27 +1,37 @@
-# React + TypeScript + Vite
+# gh-searcher
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**gh-searcher** is a lightweight web application for searching GitHub users and their repositories using the GitHub API, powered by Octokit.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Frontend Framework: React
+- Styling: Tailwind CSS, Radix UI (shadcn/ui)
+- State Management: Zustand (with middleware for session storage)
+- Data Fetching: Octokit (GitHub API), React Query
+- Language: TypeScript
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **User Search**: Enter a GitHub username to find detailed user profiles.
 
-- Configure the top-level `parserOptions` property like this:
+- **User's Repositories**: Explore the repositories of a GitHub user to discover their projects.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- **Fast and Simple**: Quickly find the information you need without unnecessary complexity.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Getting Started
+
+To get started with gh-searcher, follow these steps:
+
+1. **Visit the Website**: Go to [gh-searcher.com](https://yogyy.github.io/ghsearcher).
+
+2. **Search Users**: Enter a GitHub username in the search bar and click "Search."
+
+3. **Explore Repositories**: Click on a user profile to view their repositories.
+
+Enjoy the simplicity and efficiency of gh-searcher for your GitHub user and repository searches, powered by Octokit!
+
+## License
+
+This project is open source and is licensed under the [MIT License](LICENSE). You are free to use and modify it as needed.
+
+Thank you for using gh-searcher!

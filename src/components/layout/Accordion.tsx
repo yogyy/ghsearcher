@@ -36,7 +36,7 @@ function Accordion({ link, title, value, ...props }: AccordionType) {
 
   return (
     <AccordionItem value={value}>
-      <AccordionTrigger>{title}</AccordionTrigger>
+      <AccordionTrigger className="outline-[#2d9cdb]">{title}</AccordionTrigger>
       <AccordionContent
         className={cn(
           'relative w-full',

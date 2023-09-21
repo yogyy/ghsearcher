@@ -25,7 +25,7 @@
 
 To get started with gh-searcher, follow these steps:
 
-1. **Visit the Website**: Go to [gh-searcher.com](https://yogyy.github.io/ghsearcher).
+1. **Visit the Website**: Go to [https://yogyy.github.io/ghsearcher/](https://yogyy.github.io/ghsearcher).
 
 2. **Search Users**: Enter a GitHub username in the search bar and click "Search."
 

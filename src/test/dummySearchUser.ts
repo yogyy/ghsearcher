@@ -1,0 +1,102 @@
+import { GithubSearchUsersResponse } from '~/types/github';
+
+export const SearchUserRes: GithubSearchUsersResponse['data'] = {
+  total_count: 4,
+  incomplete_results: false,
+  items: [
+    {
+      login: 'yogyy',
+      id: 62535762,
+      node_id: 'MDQ6VXNlcjYyNTM1NzYy',
+      avatar_url: 'https://avatars.githubusercontent.com/u/62535762?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/yogyy',
+      html_url: 'https://github.com/yogyy',
+      followers_url: 'https://api.github.com/users/yogyy/followers',
+      following_url:
+        'https://api.github.com/users/yogyy/following{/other_user}',
+      gists_url: 'https://api.github.com/users/yogyy/gists{/gist_id}',
+      starred_url: 'https://api.github.com/users/yogyy/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/yogyy/subscriptions',
+      organizations_url: 'https://api.github.com/users/yogyy/orgs',
+      repos_url: 'https://api.github.com/users/yogyy/repos',
+      events_url: 'https://api.github.com/users/yogyy/events{/privacy}',
+      received_events_url: 'https://api.github.com/users/yogyy/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'YOGYYT',
+      id: 71133780,
+      node_id: 'MDQ6VXNlcjcxMTMzNzgw',
+      avatar_url: 'https://avatars.githubusercontent.com/u/71133780?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/YOGYYT',
+      html_url: 'https://github.com/YOGYYT',
+      followers_url: 'https://api.github.com/users/YOGYYT/followers',
+      following_url:
+        'https://api.github.com/users/YOGYYT/following{/other_user}',
+      gists_url: 'https://api.github.com/users/YOGYYT/gists{/gist_id}',
+      starred_url: 'https://api.github.com/users/YOGYYT/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/YOGYYT/subscriptions',
+      organizations_url: 'https://api.github.com/users/YOGYYT/orgs',
+      repos_url: 'https://api.github.com/users/YOGYYT/repos',
+      events_url: 'https://api.github.com/users/YOGYYT/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/YOGYYT/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'yogyyoghurt',
+      id: 55795451,
+      node_id: 'MDQ6VXNlcjU1Nzk1NDUx',
+      avatar_url: 'https://avatars.githubusercontent.com/u/55795451?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/yogyyoghurt',
+      html_url: 'https://github.com/yogyyoghurt',
+      followers_url: 'https://api.github.com/users/yogyyoghurt/followers',
+      following_url:
+        'https://api.github.com/users/yogyyoghurt/following{/other_user}',
+      gists_url: 'https://api.github.com/users/yogyyoghurt/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/yogyyoghurt/starred{/owner}{/repo}',
+      subscriptions_url:
+        'https://api.github.com/users/yogyyoghurt/subscriptions',
+      organizations_url: 'https://api.github.com/users/yogyyoghurt/orgs',
+      repos_url: 'https://api.github.com/users/yogyyoghurt/repos',
+      events_url: 'https://api.github.com/users/yogyyoghurt/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/yogyyoghurt/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'Yogyyogy',
+      id: 34651826,
+      node_id: 'MDQ6VXNlcjM0NjUxODI2',
+      avatar_url: 'https://avatars.githubusercontent.com/u/34651826?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/Yogyyogy',
+      html_url: 'https://github.com/Yogyyogy',
+      followers_url: 'https://api.github.com/users/Yogyyogy/followers',
+      following_url:
+        'https://api.github.com/users/Yogyyogy/following{/other_user}',
+      gists_url: 'https://api.github.com/users/Yogyyogy/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/Yogyyogy/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/Yogyyogy/subscriptions',
+      organizations_url: 'https://api.github.com/users/Yogyyogy/orgs',
+      repos_url: 'https://api.github.com/users/Yogyyogy/repos',
+      events_url: 'https://api.github.com/users/Yogyyogy/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/Yogyyogy/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+  ],
+};

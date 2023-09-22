@@ -1,5 +1,5 @@
+import { LoaderIcon, StarIcon } from '@/icons';
 import { cn } from '@/lib/utils';
-import { Loader2, LucideStar } from 'lucide-react';
 import type { GithubRepoResponse } from '~/types/github';
 
 type AnchorProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
@@ -11,7 +11,10 @@ type RepoT = {
 const Repo = ({ repo, className, ...props }: RepoT) => {
   return (
     <a
-      className={cn('bg-[#E0E0E0] min-h-[5rem] h-full px-2 py-1.5 rounded-sm w-full', className)}
+      className={cn(
+        'bg-[#E0E0E0] min-h-[5rem] h-full px-2 py-1.5 rounded-sm w-full',
+        className
+      )}
       href={repo.html_url}
       target="_blank"
       rel="noopener noreferrer"
@@ -23,7 +26,7 @@ const Repo = ({ repo, className, ...props }: RepoT) => {
           {repo.stargazers_count && repo.stargazers_count > 0
             ? repo.stargazers_count
             : null}
-          <LucideStar
+          <StarIcon
             className={cn(
               'w-4',
               repo.stargazers_count &&
@@ -41,7 +44,7 @@ const Repo = ({ repo, className, ...props }: RepoT) => {
 const RepoLoading = () => {
   return (
     <div className="bg-[#E0E0E0] min-h-[5rem] grid place-content-center">
-      <Loader2 className="animate-spin text-[#2D9CDB]" />
+      <LoaderIcon className="animate-spin text-[#2D9CDB]" />
     </div>
   );
 };

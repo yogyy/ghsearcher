@@ -1,8 +1,8 @@
 import * as React from "react"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { ChevronDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { ChevronDownIcon } from "@/icons"
 
 const Accordion = AccordionPrimitive.Root
 
@@ -26,16 +26,15 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180 bg-[#F2F2F2] p-1.5",
+        'flex flex-1 items-center justify-between font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180 bg-[#F2F2F2] p-1.5',
         className
       )}
-      {...props}
-    >
+      {...props}>
       {children}
-      <ChevronDown className="h-5 w-5 shrink-0 transition-transform duration-200" />
+      <ChevronDownIcon className="h-5 w-5 shrink-0 transition-transform duration-200" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
-))
+));
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
 
 const AccordionContent = React.forwardRef<

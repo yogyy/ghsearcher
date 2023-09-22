@@ -2,7 +2,7 @@ import { Accordion } from '@/components/ui/accordion';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { UserAccordion } from '@/components/layout/Accordion';
 import { useUserStore } from '@/store/store';
-import { Loader2 } from 'lucide-react';
+import { LoaderIcon } from '@/icons';
 
 const ResultSearch = () => {
   const result = useUserStore(state => state.result);
@@ -17,7 +17,7 @@ const ResultSearch = () => {
         {loading ? (
           [1, 2, 3, 4, 5].map(i => (
             <div key={i} className="bg-[#E0E0E0] h-9 grid place-content-center">
-              <Loader2 className="animate-spin text-[#2d9cdb] w-4" />
+              <LoaderIcon className="animate-spin text-[#2d9cdb] w-4" />
             </div>
           ))
         ) : (

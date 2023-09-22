@@ -3,6 +3,7 @@ import { Input } from '../ui/Input';
 import { useUserStore } from '@/store/store';
 import { GithubSearchUsersResponse } from '~/types/github';
 import octokit from '@/lib/octokit';
+import { cn } from '@/lib/utils';
 
 const SearchUser = () => {
   const [query, setQuery] = useState<string>('');
@@ -30,7 +31,7 @@ const SearchUser = () => {
   };
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="relative flex flex-col gap-3">
       <Input
         placeholder="Enter username"
         type="text"
@@ -40,9 +41,12 @@ const SearchUser = () => {
       />
       <button
         type="submit"
-        className="bg-[#2D9CDB] text-white w-full p-1.5 rounded-sm"
+        className={cn(
+          'bg-[#2D9CDB] text-white w-full p-1.5 rounded-sm',
+          (query.length === 0 || loading) && 'cursor-not-allowed'
+        )}
         onClick={seachUser}
-        disabled={loading}>
+        disabled={query.length === 0 || loading}>
         Search
       </button>
     </div>

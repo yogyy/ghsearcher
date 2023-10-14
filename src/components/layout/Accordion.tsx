@@ -7,7 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 import { GithubRepoResponse } from '~/types/github';
 import octokit from '@/lib/octokit';
 import { cn } from '@/lib/utils';
-import { Repo, RepoLoading } from './Repo';
+import Repo from './Repo';
 
 interface AccordionType {
   value: string;
@@ -36,28 +36,39 @@ function Accordion({ link, title, value, ...props }: AccordionType) {
 
   return (
     <AccordionItem value={value}>
-      <AccordionTrigger className="outline-[#2d9cdb]">{title}</AccordionTrigger>
+      <AccordionTrigger className="bg-primary/25 rounded-sm outline-none hover:bg-primary/50 focus:bg-primary/50 transition-colors duration-200 px-3">
+        {title}
+      </AccordionTrigger>
       <AccordionContent
         className={cn(
           'relative w-full',
           repos &&
-            repos.length >= 10 &&
-            'data-[state=open]:animate-accordion-down-long data-[state=close]:animate-accordion-up-long'
+            repos.length === 5 &&
+            'data-[state=open]:duration-500 data-[state=close]:duration-500'
         )}
         {...props}>
         {repoLoading ? (
-          <RepoLoading />
+          <div className="bg-primary/40 min-h-[5rem] animate-pulse rounded-sm" />
         ) : (
           <>
-            {repos && repos.length! >= 1 ? (
+            {repos && repos.length >= 1 ? (
               repos?.map(repo => <Repo key={repo.name} repo={repo} />)
             ) : (
               <a
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium bg-[#E0E0E0] h-full px-2 py-1.5 italic">
+                className="font-medium bg-destructive h-full px-2 py-1.5 italic rounded-sm">
                 {title} doesn't have any public repositories yet.
+              </a>
+            )}
+            {repos && repos.length >= 5 && (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium bg-primary/25 hover:bg-primary/50 px-2 py-1.5 italic focus:bg-primary/50 transition-colors duration-200 rounded-sm">
+                more repo
               </a>
             )}
           </>

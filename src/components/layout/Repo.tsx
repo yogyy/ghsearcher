@@ -1,4 +1,4 @@
-import { LoaderIcon, StarIcon } from '@/icons';
+import { Star } from '@/icons';
 import { cn } from '@/lib/utils';
 import type { GithubRepoResponse } from '~/types/github';
 
@@ -12,7 +12,9 @@ const Repo = ({ repo, className, ...props }: RepoT) => {
   return (
     <a
       className={cn(
-        'bg-[#E0E0E0] min-h-[5rem] h-full px-2 py-1.5 rounded-sm w-full',
+        'bg-primary/25 min-h-[5rem] h-auto px-2 py-1.5 rounded-sm',
+        'hover:bg-primary/50 focus:bg-primary/50 transition-colors duration-200',
+        'text-foreground min-w-fit',
         className
       )}
       href={repo.html_url}
@@ -21,32 +23,35 @@ const Repo = ({ repo, className, ...props }: RepoT) => {
       title={repo.name}
       {...props}>
       <div className="flex justify-between">
-        <p className="font-semibold text-lg">{repo.name}</p>
-        <span className="inline-flex items-center gap-1.5 font-bold">
+        <p className="text-base md:text-lg font-medium text-inherit">
+          {repo.name.slice(0, 20)}
+        </p>
+        <span className="inline-flex items-center gap-1.5 font-semibold text-accent">
           {repo.stargazers_count && repo.stargazers_count > 0
             ? repo.stargazers_count
             : null}
-          <StarIcon
+          <Star
             className={cn(
               'w-4',
               repo.stargazers_count &&
                 repo.stargazers_count > 0 &&
-                'fill-current'
+                'fill-foreground text-foreground'
             )}
           />
         </span>
       </div>
-      <p className="text-sm">{repo.description}</p>
+      <p className="text-inherit text-xs md:text-sm w-auto">
+        <span className="block sm:hidden">
+          {repo.description && repo.description.length >= 40 ? (
+            <>{repo.description.slice(0, 40)}...</>
+          ) : (
+            repo.description
+          )}
+        </span>
+        <span className="hidden sm:block">{repo.description}</span>
+      </p>
     </a>
   );
 };
 
-const RepoLoading = () => {
-  return (
-    <div className="bg-[#E0E0E0] min-h-[5rem] grid place-content-center">
-      <LoaderIcon className="animate-spin text-[#2D9CDB]" />
-    </div>
-  );
-};
-
-export { Repo, RepoLoading };
+export default Repo;

@@ -31,19 +31,22 @@ const SearchUser = () => {
   };
 
   return (
-    <div className="relative flex flex-col gap-3">
+    <div className="relative flex flex-col md:flex-row gap-2">
       <Input
         placeholder="Enter username"
         type="text"
         value={query}
         onChange={e => setQuery(e.target.value)}
-        className="w-full bg-[#F2F2F2] p-1.5 ring-0 border-none active:outline-none"
+        className={cn(
+          'w-full bg-primary/5 text-accent border focus:border-foreground'
+        )}
       />
       <button
         type="submit"
         className={cn(
-          'bg-[#2D9CDB] text-white w-full p-1.5 rounded-sm',
-          (query.length === 0 || loading) && 'cursor-not-allowed'
+          'bg-secondary text-foreground w-full p-1.5 rounded-md md:w-1/3 outline-none',
+          (query.length === 0 || loading) && 'cursor-not-allowed',
+          'disabled:text-destructive hover:bg-primary/25 focus:bg-primary/25 disabled:hover:bg-secondary'
         )}
         onClick={seachUser}
         disabled={query.length === 0 || loading}>
